@@ -53,7 +53,7 @@ mod imp {
     fn install_sigwinch(master_fd: RawFd) {
         MASTER_FD.store(master_fd, Ordering::Relaxed);
         unsafe {
-            libc::signal(libc::SIGWINCH, sigwinch_handler as libc::sighandler_t);
+            libc::signal(libc::SIGWINCH, sigwinch_handler as *const () as libc::sighandler_t);
         }
     }
 

@@ -4,6 +4,7 @@ use crate::shell_trait::Shell;
 use crate::zsh::Zsh;
 
 /// Detect the current shell from environment variables.
+#[allow(clippy::needless_return)]
 pub fn detect_shell() -> Box<dyn Shell> {
     // 1. OOPS_SHELL — explicit override, always respected
     if let Ok(shell_name) = std::env::var(oops_core::consts::ENV_SHELL) {
@@ -26,7 +27,7 @@ pub fn detect_shell() -> Box<dyn Shell> {
             if lower.contains("zsh") { return Box::new(Zsh); }
             if lower.contains("bash") { return Box::new(Bash); }
         }
-        return Box::new(PowerShell);
+        Box::new(PowerShell)
     }
 
     // 3. Unix: use $SHELL

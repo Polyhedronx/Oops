@@ -228,7 +228,7 @@ fn setup_shell_alias() {
             use std::io::Write;
             if let Err(e) = writeln!(f, "{}", entry) {
                 eprintln!("Oops: Failed to write to {}: {}", shell_cfg.path, e);
-                print_manual_alias_instructions(&shell_cfg, &one_liner);
+                print_manual_alias_instructions(&shell_cfg, one_liner);
                 return;
             }
             println!("Shell alias written to: {}", shell_cfg.path);
@@ -236,7 +236,7 @@ fn setup_shell_alias() {
         }
         Err(e) => {
             eprintln!("Oops: Cannot open {}: {}", shell_cfg.path, e);
-            print_manual_alias_instructions(&shell_cfg, &one_liner);
+            print_manual_alias_instructions(&shell_cfg, one_liner);
         }
     }
 }

@@ -1,0 +1,13 @@
+[package]
+name = "oops-tui"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+
+[dependencies]
+oops-core = { path = "../oops-core" }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+nucleo = { workspace = true }
+similar = { workspace = true }

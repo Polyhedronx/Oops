@@ -9,10 +9,10 @@ $ git pish origin main
 git: 'pish' is not a git command.
 
 $ oops
-┌──────────────────────────────────────┐
-│ > git push origin main              [git_not_cmd]               │
-│   git pull origin main              [git_pull]                  │
-└──────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│ > git push origin main              [git_not_cmd]    │
+│   git pull origin main              [git_pull]       │
+└──────────────────────────────────────────────────────┘
 ```
 
 ---
